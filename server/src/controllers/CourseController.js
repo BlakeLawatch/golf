@@ -7,6 +7,12 @@ export class CourseController extends BaseController {
             .post('', this.createCourse)
     }
     async createCourse(req, res, next) {
-
+        try {
+            const courseData = req.body
+            courseData.creatorId = req.userinfo.id
+            const newCourse = await CourseService.createCourse(courseData)
+        } catch (error) {
+            next(error)
+        }
     }
 }
