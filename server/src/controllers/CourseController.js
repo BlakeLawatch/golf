@@ -1,4 +1,6 @@
+import { courseService } from "../services/CourseService";
 import BaseController from "../utils/BaseController";
+
 
 export class CourseController extends BaseController {
     constructor(data) {
@@ -10,7 +12,8 @@ export class CourseController extends BaseController {
         try {
             const courseData = req.body
             courseData.creatorId = req.userinfo.id
-            const newCourse = await CourseService.createCourse(courseData)
+            const newCourse = await courseService.createCourse(courseData)
+            return res.send(newCourse)
         } catch (error) {
             next(error)
         }
