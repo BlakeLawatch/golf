@@ -3,8 +3,8 @@ import BaseController from "../utils/BaseController";
 
 
 export class CourseController extends BaseController {
-    constructor(data) {
-        super('api/course')
+    constructor() {
+        super(`api/course`)
         this.router
             .post('', this.createCourse)
     }
@@ -12,7 +12,7 @@ export class CourseController extends BaseController {
         try {
             const courseData = req.body
             debugger
-            courseData.creatorId = req.userinfo.id
+            courseData.creatorId = req.userInfo.id
             const newCourse = await courseService.createCourse(courseData)
             return res.send(newCourse)
         } catch (error) {
