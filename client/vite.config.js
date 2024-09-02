@@ -9,7 +9,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 export default defineConfig({
   plugins: [
     vue(),
-    vueDevTools(),
+    // vueDevTools(),
     eslintPlugin({
       overrideConfigFile: 'eslint.config.js',
     }),
@@ -27,6 +27,6 @@ export default defineConfig({
   },
 
   // NOTE If deploying to gh-pages uncomment the line below (https://vitejs.dev/config/shared-options.html#base)
-  // base: '/golf/'
+  base: '/golf/'
 })
 

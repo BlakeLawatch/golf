@@ -1,17 +1,19 @@
+import auth0provider, { Auth0Provider } from "@bcwdev/auth0provider";
 import { courseService } from "../services/CourseService";
 import BaseController from "../utils/BaseController";
 
 
 export class CourseController extends BaseController {
     constructor() {
-        super(`api/course`)
+        super(`api/courses`)
         this.router
-            .post('', this.createCourse)
+            .use(Auth0Provider.getAuthorizedUserInfo)
+            .post(``, this.createCourse)
     }
     async createCourse(req, res, next) {
         try {
             const courseData = req.body
-            debugger
+            // debugger
             courseData.creatorId = req.userInfo.id
             const newCourse = await courseService.createCourse(courseData)
             return res.send(newCourse)
