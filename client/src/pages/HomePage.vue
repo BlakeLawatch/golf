@@ -4,9 +4,9 @@
 
 <template>
   <div class="container-fluid masters-green-bg">
-    <section class="row justify-content-center">
-      <div class="col-4">
-        <h1 class="masters-yellow shadow">SELECT YOUR COURSE</h1>
+    <section class="row shadow justify-content-center">
+      <div class="col-4 text-center">
+        <h1 class="masters-yellow">SELECT YOUR COURSE</h1>
       </div>
     </section>
   </div>
