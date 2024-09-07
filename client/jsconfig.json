@@ -9,6 +9,9 @@
         "./src/*"
       ]
     },
+    "lib": [
+      "es2015"
+    ],
     "jsx": "preserve",
     "allowJs": true,
     "checkJs": true

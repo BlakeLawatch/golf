@@ -3,6 +3,7 @@
     <section class="row shadow justify-content-center">
       <div class="col-4 text-center">
         <h1 class="masters-yellow">SELECT YOUR COURSE</h1>
+        <p>{{ courses }}</p>
       </div>
     </section>
   </div>
@@ -11,13 +12,14 @@
 <script setup>
 
 import Pop from '../utils/Pop';
-import { onMounted } from 'vue'
-import { coursesService } from '../services/coursesService'
+import { computed, onMounted } from 'vue'
+import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
 
+const courses = computed(() => AppState.courses)
 
 onMounted(() => {
-  getCourses()
+  { getCourses() }
 })
 
 async function getCourses() {
@@ -26,9 +28,8 @@ async function getCourses() {
   } catch (error) {
     Pop.error(error)
   }
-}
 
-courses = computed(() => AppState.courses)
+}
 
 
 </script>
