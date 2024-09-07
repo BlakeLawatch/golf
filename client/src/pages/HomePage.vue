@@ -3,7 +3,10 @@
     <section class="row shadow justify-content-center">
       <div class="col-4 text-center">
         <h1 class="masters-yellow">SELECT YOUR COURSE</h1>
-        <p>{{ courses }}</p>
+        <div v-for="course in courses" :key="course">
+          <p>{{ course.name }}</p>
+
+        </div>
       </div>
     </section>
   </div>
