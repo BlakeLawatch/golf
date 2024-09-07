@@ -8,31 +8,31 @@
   </div>
 </template>
 
+<script setup>
 
-<script>
 import Pop from '../utils/Pop';
 import { onMounted } from 'vue'
+import { coursesService } from '../services/coursesService'
+import { AppState } from '../AppState'
 
 
-export default {
+onMounted(() => {
+  getCourses()
+})
 
-  setup() {
-    onMounted(() => {
-      getCourses()
-    })
-
-
-    async getCourses(){
-      try {
-        await coursesService.getCourses()
-      } catch (error) {
-        Pop.error(error)
-      }
-    }
+async function getCourses() {
+  try {
+    await coursesService.getCourses()
+  } catch (error) {
+    Pop.error(error)
   }
 }
 
+courses = computed(() => AppState.courses)
+
+
 </script>
+
 
 <style scoped lang="scss">
 .home {
