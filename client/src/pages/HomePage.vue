@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="container-fluid masters-green-bg">
     <section class="row shadow justify-content-center">
@@ -11,6 +7,32 @@
     </section>
   </div>
 </template>
+
+
+<script>
+import Pop from '../utils/Pop';
+import { onMounted } from 'vue'
+
+
+export default {
+
+  setup() {
+    onMounted(() => {
+      getCourses()
+    })
+
+
+    async getCourses(){
+      try {
+        await coursesService.getCourses()
+      } catch (error) {
+        Pop.error(error)
+      }
+    }
+  }
+}
+
+</script>
 
 <style scoped lang="scss">
 .home {
