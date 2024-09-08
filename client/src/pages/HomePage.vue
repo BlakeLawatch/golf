@@ -2,10 +2,10 @@
   <div class="container-fluid">
     <section class="row justify-content-center masters-green-bg">
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
-      <div class="col-3 text-center">
-        <div class="course-card" v-for="course in courses" :key="course">
-          <p>{{ course }}</p>
-
+      <div class="course-card d-flex col-3 text-center" v-for="course in courses" :key="course">
+        <div>
+          <p class="f2">{{ course.name }}</p>
+          <p class="f4">{{ course.city }}</p>
         </div>
       </div>
     </section>
