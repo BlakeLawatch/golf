@@ -1,10 +1,10 @@
 <template>
-  <div class="container-fluid masters-green-bg">
-    <section class="row shadow justify-content-center">
-      <div class="col-4 text-center">
-        <h1 class="masters-yellow">SELECT YOUR COURSE</h1>
-        <div v-for="course in courses" :key="course">
-          <p>{{ course.name }}</p>
+  <div class="container-fluid">
+    <section class="row justify-content-center masters-green-bg">
+      <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
+      <div class="col-3 text-center">
+        <div class="course-card" v-for="course in courses" :key="course">
+          <p>{{ course }}</p>
 
         </div>
       </div>
@@ -57,5 +57,9 @@ async function getCourses() {
       object-position: center;
     }
   }
+}
+
+.course-card {
+  border: .1rem solid #f4dc00;
 }
 </style>
