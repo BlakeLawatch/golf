@@ -20,7 +20,7 @@ import Pop from '../utils/Pop';
 import { computed, onMounted } from 'vue'
 import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
-// import CourseComponent from '../components/CourseComponent.vue';
+import CourseComponent from '../components/CourseComponent.vue';
 
 const courses = computed(() => AppState.courses)
 
