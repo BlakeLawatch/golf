@@ -10,6 +10,7 @@ export class CourseController extends BaseController {
             .get('', this.getCourses)
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('', this.createCourse)
+            .put('/:courseId', this.editCourse)
     }
     async createCourse(req, res, next) {
         try {
@@ -27,6 +28,17 @@ export class CourseController extends BaseController {
             const courseId = req.body.courseId
             const courses = await courseService.getCourses(courseId)
             return res.send(courses)
+        } catch (error) {
+            next(error)
+        }
+    }
+    async editCourse(req, res, next) {
+        try {
+            const courseInfo = req.body
+            const courseId = req.params.courseId
+            const userId = req.userInfo.id
+            const editedCourse = await courseService.editCourse(courseInfo, courseId, userId)
+            return res.send(editedCourse)
         } catch (error) {
             next(error)
         }
