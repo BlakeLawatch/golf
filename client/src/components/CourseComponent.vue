@@ -9,12 +9,17 @@
 import { computed } from 'vue';
 // import { AppState } from '../AppState';
 import { Course } from '../models/Course'
+import { coursesService } from '../services/coursesService.js'
 
+const courseProp = null
 
-const props = {
+const props = courseProp({
     course: { type: Course, required: true }
-}
+})
 
+// function setActiveCourse(){
+//     coursesService.
+// }
 
 
 const coverImg = computed(() => `url(${props.course?.img})`)
