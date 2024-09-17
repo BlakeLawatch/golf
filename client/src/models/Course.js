@@ -4,7 +4,7 @@ export class Course{
         this.id = data.id
         this.name = data.name
         this.city = data.city
-        this.img = data.img
+        this.coverImg = data.coverImg
         this.creatorId = data.creatorId
         this.createdAt = data.createdAt
         this.updatedAt = data.updatedAt
