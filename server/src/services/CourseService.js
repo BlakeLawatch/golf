@@ -26,6 +26,14 @@ class CourseService {
         await editedCourse.save()
         return editedCourse
     }
+    async eraseCourse(courseId, userId) {
+        const erasedCourse = await dbContext.Courses.findByIdAndDelete(courseId)
+
+        if (erasedCourse.creatorId != userId) {
+            throw new Forbidden("Yeah right buddy")
+        }
+        return erasedCourse
+    }
 }
 
 export const courseService = new CourseService()

@@ -11,6 +11,7 @@ export class CourseController extends BaseController {
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('', this.createCourse)
             .put('/:courseId', this.editCourse)
+            .delete('/:courseId', this.eraseCourse)
     }
     async createCourse(req, res, next) {
         try {
@@ -40,6 +41,17 @@ export class CourseController extends BaseController {
             const editedCourse = await courseService.editCourse(courseInfo, courseId, userId)
             return res.send(editedCourse)
         } catch (error) {
+            next(error)
+        }
+    }
+    async eraseCourse(req, res, next) {
+        try {
+            const courseId = req.params.courseId
+            const userId = req.userInfo.id
+            const erasedCourse = await courseService.eraseCourse(courseId, userId)
+            return res.send(erasedCourse)
+        }
+        catch (error) {
             next(error)
         }
     }
