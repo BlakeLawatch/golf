@@ -3,12 +3,12 @@
     <section class="row justify-content-center masters-green-bg">
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
       <div class="course-card d-flex col-3 text-center" v-for="course in courses" :key="course.id">
-        <!-- <CourseComponent :course="course" /> -->
+        <CoursesComponent :course="course" />
 
         <div>
-          <p class="f2">{{ course.name }}</p>
+          <!-- <p class="f2">{{ course.name }}</p>
           <p class="f4">{{ course.city }}</p>
-          <img :src="course.coverImg" alt="">
+          <img :src="course.coverImg" alt=""> -->
         </div>
       </div>
     </section>
@@ -21,7 +21,7 @@ import Pop from '../utils/Pop';
 import { computed, onMounted } from 'vue'
 import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
-import CourseComponent from '../components/CourseComponent.vue';
+import CoursesComponent from '../components/CoursesComponent.vue';
 
 const courses = computed(() => AppState.courses)
 
