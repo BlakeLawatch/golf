@@ -1,6 +1,6 @@
 <template>
     <p>hello</p>
-    <!-- <p>{{ props.course.name }} </p> -->
+    <p>{{ course.name }} </p>
 </template>
 
 
@@ -9,13 +9,13 @@ import { computed, } from 'vue';
 import { AppState } from '../AppState';
 import { Course } from '../models/Course.js'
 
-const courseProp = null
 
-const props = courseProp({
+
+const props = defineProps({
     course: { type: Course, required: true }
 })
 
-const courses = computed(() => AppState.courses)
+// const courses = computed(() => AppState.courses)
 
 // function setActiveCourse(){
 //     coursesService.
