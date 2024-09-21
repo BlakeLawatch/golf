@@ -1,6 +1,8 @@
 <template>
-    <p>hello</p>
-    <p>{{ course.name }} </p>
+    <div class="bg-img">
+        <p class="font">{{ course.name }} </p>
+
+    </div>
 </template>
 
 
@@ -21,9 +23,20 @@ const props = defineProps({
 //     coursesService.
 // }
 
-// const coverImg = computed(() => `url(${props.course?.img})`)
+const backImg = computed(() => `url(${props.course?.coverImg})`)
 
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.bg-img {
+    background-image: v-bind(backImg);
+    background-position: center;
+    background-size: cover;
+}
+
+.font {
+    color: black;
+    text-shadow: 1px 1px 2px white;
+}
+</style>
