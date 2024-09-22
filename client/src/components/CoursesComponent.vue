@@ -33,6 +33,8 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
     background-image: v-bind(backImg);
     background-position: center;
     background-size: cover;
+    height: 20dvh;
+    width: 25dvw;
 }
 
 .font {
