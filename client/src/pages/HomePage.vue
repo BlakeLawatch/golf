@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <section class="row justify-content-around masters-green-bg">
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
-      <div class="course-card d-flex col-4 text-center" v-for="course in courses" :key="course.id">
+      <div class="d-flex col-6 text-center py-4" v-for="course in courses" :key="course.id">
         <CoursesComponent :course="course" />
 
         <div>
@@ -61,9 +61,5 @@ async function getCourses() {
       object-position: center;
     }
   }
-}
-
-.course-card {
-  border: .1rem solid #f4dc00;
 }
 </style>

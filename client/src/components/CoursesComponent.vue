@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-img">
+    <div class="bg-img course-card">
         <p class="font">{{ course.name }} </p>
 
     </div>
@@ -40,5 +40,12 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
 .font {
     color: black;
     text-shadow: 1px 1px 2px white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.course-card {
+    border: .1rem solid #f4dc00;
+    border-radius: 4px;
 }
 </style>

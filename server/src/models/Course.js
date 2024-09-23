@@ -4,7 +4,8 @@ export const CourseSchema = new Schema({
     name: { type: String, required: true },
     city: { type: String, required: true },
     coverImg: { type: String, required: false },
-    yardage: { type: Number, required: false },
+    yardage: { type: String, required: false },
+    par: { type: String, required: false },
     creatorId: { type: Schema.Types.ObjectId, required: true }
 },
     {
