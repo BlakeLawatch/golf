@@ -1,7 +1,15 @@
 <template>
-    <div class="bg-img course-card">
-        <p class="font">{{ course.name }} </p>
+    <div class="d-flex">
+        <div class="bg-img course-card text-center">
+            <p class="font">{{ course.name }} </p>
+        </div>
+        <div class="d-flex">
+            <div class="d-flex details">
+                <p>{{ course.city }}</p>
+                <p>{{ course.yardage }}</p>
+            </div>
 
+        </div>
     </div>
 </template>
 
@@ -47,5 +55,10 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
 .course-card {
     border: .1rem solid #f4dc00;
     border-radius: 4px;
+}
+
+.details {
+    color: white;
+    text-shadow: 1px 1px 2px #f4dc00;
 }
 </style>

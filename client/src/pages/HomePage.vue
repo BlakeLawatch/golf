@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <section class="row justify-content-around masters-green-bg">
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
-      <div class="d-flex col-6 text-center py-4" v-for="course in courses" :key="course.id">
+      <div class="d-flex col-6 py-4" v-for="course in courses" :key="course.id">
         <CoursesComponent :course="course" />
 
         <div>
