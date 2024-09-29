@@ -1,16 +1,21 @@
 <template>
-    <div class="d-flex">
-        <div class="bg-img course-card text-center">
-            <p class="font">{{ course.name }} </p>
-        </div>
-        <div class="d-flex">
-            <div class="d-flex details">
-                <p>{{ course.city }}</p>
-                <p>{{ course.yardage }}</p>
+    <section class="row">
+        <div class="d-flex justify-content-around">
+            <div class="bg-img course-card text-center">
+                <p class="font">{{ course.name }} </p>
+            </div>
+            <div>
+                <div class="d-flex mx-5 details">
+                    <p class="mx-4">{{ course.city }}</p>
+                    <p class="mx-4">{{ course.yardage }} yards</p>
+                </div>
+                <div class="ms-2">
+                    Players go here
+                </div>
             </div>
 
         </div>
-    </div>
+    </section>
 </template>
 
 
