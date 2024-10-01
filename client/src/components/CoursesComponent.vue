@@ -10,7 +10,7 @@
                     <p class="mx-4">{{ course.yardage }} yards</p>
                 </div>
                 <div class="ms-2">
-                    Players go here
+
                 </div>
             </div>
 
