@@ -1,10 +1,21 @@
-import { text } from "express";
 import { Schema } from "mongoose";
 
-export const CourseSchema = new Schema({
+export const ScoreSchema = new Schema({
 
     score: { type: String, required: true },
-    GreensInRegulation: { type: String, required: false },
-    PuttsPerRound: { type: String, required: false },
+    courseId: { type: Schema.Types.ObjectId, required: true },
+    creatorId: { type: Schema.Types.ObjectId, required: true },
+    greensInRegulation: { type: String, required: false },
+    puttsPerRound: { type: String, required: false },
+    outOfBounds: { type: String, required: false }
+},
+    {
+        timestamps: true, toJSON: { virtuals: true }
+    })
 
+ScoreSchema.virtual('creator', {
+    localField: 'creatorId',
+    ref: 'Account',
+    foreignField: '_id',
+    justOne: true
 })
