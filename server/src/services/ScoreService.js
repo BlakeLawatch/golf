@@ -6,6 +6,10 @@ class ScoreService {
         const newScore = (await dbContext.Scores.create(scoreData)).populate('creator')
         return newScore
     }
+    async getSCores(courseId) {
+        const scores = (await dbContext.Scores.findById({ courseId })).populate('creator')
+        return scores
+    }
 }
 
 
