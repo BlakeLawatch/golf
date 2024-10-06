@@ -9,6 +9,7 @@ export class CourseController extends BaseController {
         super(`api/courses`)
         this.router
             .get('', this.getCourses)
+            .get(':/courseId', this.getCoursebyId)
             .get(':/courseId/scores', this.getScores)
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('', this.createCourse)
@@ -23,6 +24,16 @@ export class CourseController extends BaseController {
         } catch (error) {
             next(error)
         }
+    }
+    async getCoursebyId(req, res, next) {
+        try {
+            const courseId = req.params.courseId
+            const course = await courseService.getCoursebyId(courseId)
+            return res.send(course)
+        } catch (error) {
+            next(error)
+        }
+
     }
     async getScores(req, res, next) {
         try {

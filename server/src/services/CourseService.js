@@ -11,6 +11,10 @@ class CourseService {
         const courses = await dbContext.Courses.find(courseId).populate('creator')
         return courses
     }
+    async getCoursebyId(courseId) {
+        const course = (await dbContext.Courses.findById(courseId)).populate('creator')
+        return course
+    }
     async editCourse(courseInfo, courseId, userId) {
         const editedCourse = await dbContext.Courses.findById(courseId)
 
