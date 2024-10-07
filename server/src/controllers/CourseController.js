@@ -9,8 +9,8 @@ export class CourseController extends BaseController {
         super(`api/courses`)
         this.router
             .get('', this.getCourses)
-            .get(':/courseId', this.getCoursebyId)
-            .get(':/courseId/scores', this.getScores)
+            .get('/:courseId', this.getCoursebyId)
+            .get('/:courseId/scores', this.getScores)
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('', this.createCourse)
             .put('/:courseId', this.editCourse)
