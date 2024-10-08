@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid">
         <section class="row">
-            <div>
-                <button @click="addScore()" class="mdi mdi-plus-thick">Add Score</button>
+            <div class="text-center pt-5">
+                <button @click="addScore()" class="mdi mdi-plus-thick rounded-pill">Add Score</button>
 
             </div>
         </section>
