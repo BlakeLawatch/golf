@@ -17,6 +17,13 @@ class ScoreService {
         if (updatedScore.creatorId.toString() != userId) {
             throw new Forbidden("Not yours to edit")
         }
+        updatedScore.score = scoreData.score || updatedScore.score
+        updatedScore.greensInRegulation = scoreData.greensInRegulation || updatedScore.greensInRegulation
+        updatedScore.puttsPerRound = scoreData.puttsPerRound || updatedScore.puttsPerRound
+        updatedScore.outOfBounds = scoreData.outOfBounds || updatedScore.outOfBounds
+
+        await updatedScore.save()
+        return updatedScore
     }
     async deleteScore(scoreId, userId) {
         const deletedScore = await dbContext.Scores.findByIdAndDelete(scoreId)
