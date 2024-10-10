@@ -10,6 +10,10 @@ class ScoreService {
         const scores = await dbContext.Scores.find({ courseId }).populate('creator')
         return scores
     }
+    async deleteScore(scoreId) {
+        const deletedScore = await dbContext.Scores.findByIdAndDelete(scoreId)
+        return deletedScore
+    }
 }
 
 

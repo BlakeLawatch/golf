@@ -21,4 +21,14 @@ export class ScoresController extends BaseController {
         }
 
     }
+
+    async deleteScore(req, res, next) {
+        try {
+            const scoreId = req.params.scoreId
+            const deletedScore = await scoresService.deleteScore(scoreId)
+            return res.send(deletedScore)
+        } catch (error) {
+            next(error)
+        }
+    }
 }
