@@ -1,4 +1,5 @@
 import { dbContext } from "../db/DbContext"
+import { Forbidden } from "../utils/Errors"
 
 class ScoreService {
 
@@ -10,8 +11,19 @@ class ScoreService {
         const scores = await dbContext.Scores.find({ courseId }).populate('creator')
         return scores
     }
-    async deleteScore(scoreId) {
+    async editScore(scoreData, scoreId, userId) {
+        const updatedScore = await dbContext.Scores.findById(scoreId)
+
+        if (updatedScore.creatorId.toString() != userId) {
+            throw new Forbidden("Not yours to edit")
+        }
+    }
+    async deleteScore(scoreId, userId) {
         const deletedScore = await dbContext.Scores.findByIdAndDelete(scoreId)
+
+        if (deletedScore.creatorId.toString() != userId) {
+            throw new Forbidden("Yeah Right")
+        }
         return deletedScore
     }
 }
