@@ -8,7 +8,7 @@ export const AppState = reactive({
   account: null,
   /** @type {import('./models/Course.js').Course[]} user info from the database*/
   courses: [],
-  // /** @type {import('./models/Course.js').Course[]} user info from the database*/
-  // courseProp: null
+  /** @type {import('./models/Score.js').Score[]} user info from the database*/
+  scores: []
 })
 
