@@ -1,10 +1,10 @@
 <template>
-    <div v-if="activeCourse" class="container-fluid">
+    <div class="container-fluid">
         <section class="row">
             <div class="text-center pt-5">
                 <button @click="addScore()" class="mdi mdi-plus-thick rounded-pill">Add Score</button>
                 <p>{{ scores }}</p>
-                <p>{{ activeCourse.name }}</p>
+                <p>{{ activeCourse }}</p>
             </div>
         </section>
 
@@ -12,7 +12,7 @@
 </template>
 
 
-<script>
+<script setup>
 import { AppState } from '@/AppState';
 import { coursesService } from '@/services/coursesService';
 import { scoresService } from '@/services/ScoresService';
@@ -26,9 +26,11 @@ const activeCourse = computed(() => AppState.activeCourse)
 const route = useRoute()
 
 onMounted(() => {
-    { getScoresbyCourseId() }
     { getCoursebyId() }
+    { getScoresbyCourseId() }
+
 })
+
 
 async function getCoursebyId() {
     try {
