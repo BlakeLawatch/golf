@@ -1,8 +1,10 @@
 <template>
     <div class="container-fluid">
         <section class="row">
+            <div>
+                <ScoreModal />
+            </div>
             <div class="text-center pt-5">
-                <button @click="addScore()" class="mdi mdi-plus-thick rounded-pill">Add Score</button>
                 <p>{{ scores }}</p>
                 <p>{{ activeCourse }}</p>
             </div>
@@ -19,6 +21,7 @@ import { scoresService } from '@/services/ScoresService';
 import Pop from '@/utils/Pop';
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import ScoreModal from '../components/ScoreModal.vue'
 
 
 const scores = computed(() => AppState.scores)
