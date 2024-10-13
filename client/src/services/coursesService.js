@@ -11,6 +11,12 @@ class CoursesService{
         logger.log('got courses!!', res.data)
     }
 
+    async getCoursebyId(courseId){
+        const res = await api.get(`api/courses/${courseId}`)
+        const currentCourse = new Course(res.data)
+        AppState.activeCourse = currentCourse
+    }
+
 }
 
 export const coursesService = new CoursesService()

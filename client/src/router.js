@@ -17,7 +17,7 @@ const routes = [
     component: loadPage('AboutPage')
   },
   {
-    path: '/course',
+    path: '/courses/:courseId',
     name: 'Course',
     component: loadPage('CoursePage')
   },

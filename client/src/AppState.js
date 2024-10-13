@@ -9,6 +9,8 @@ export const AppState = reactive({
   /** @type {import('./models/Course.js').Course[]} user info from the database*/
   courses: [],
   /** @type {import('./models/Score.js').Score[]} user info from the database*/
-  scores: []
+  scores: [],
+  /** @type {import('./models/Course.js').Course[]} user info from the database*/
+  activeCourse: null
 })
 
