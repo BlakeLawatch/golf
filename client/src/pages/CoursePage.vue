@@ -2,6 +2,9 @@
     <div class="container-fluid">
         <section class="row">
             <div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ScoreModal">
+                    Add Score
+                </button>
             </div>
             <div class="text-center pt-5">
                 <p>{{ scores }}</p>
