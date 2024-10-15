@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <section class="row">
             <div>
-                <ScoreModal />
             </div>
             <div class="text-center pt-5">
                 <p>{{ scores }}</p>
@@ -11,6 +10,7 @@
         </section>
 
     </div>
+    <ScoreModal />
 </template>
 
 
