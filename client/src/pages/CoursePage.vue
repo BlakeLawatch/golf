@@ -1,17 +1,25 @@
 <template>
     <div v-if="activeCourse" class="container-fluid">
-        <section class="row">
-            <div>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ScoreModal">
-                    Add Score
-                </button>
-            </div>
-            <div class="text-center pt-5">
-                <div v-for="score in scores" :key="score.id">
-                    <p>{{ score.score }}</p>
-
+        <section class="row justify-content-center">
+            <div class="col-12">
+                <div class="text-end pt-3">
+                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#ScoreModal">
+                        Add Score
+                    </button>
                 </div>
-                <p>{{ activeCourse.name }}</p>
+
+            </div>
+            <div class="col-6">
+                <div class="text-center pt-5">
+                    <div class="d-flex" v-for="score in scores" :key="score.id">
+                        <p>{{ score.creator.name }}</p>
+                        <p>{{ score.score }}</p>
+
+                    </div>
+                    <p>{{ activeCourse.name }}</p>
+                </div>
+
             </div>
         </section>
 

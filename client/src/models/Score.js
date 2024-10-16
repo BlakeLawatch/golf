@@ -7,6 +7,7 @@ export class Score {
         this.outOfBounds = data.outOfBounds
         this.createdAt = data.createdAt
         this.updatedAt = data.updatedAt
+        this.creator = data.creator
     }
 }
 
