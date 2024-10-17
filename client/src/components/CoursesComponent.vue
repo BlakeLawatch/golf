@@ -1,6 +1,6 @@
 <template>
-    <section class="row">
-        <div class="d-flex justify-content-around">
+    <section class="row justify-content-center">
+        <div class="col-11 d-flex justify-content-around p-2">
             <div class="bg-img course-card text-center">
                 <p class="font">{{ course.name }} </p>
             </div>
@@ -8,9 +8,6 @@
                 <div class="d-flex mx-5 details">
                     <p class="mx-4">{{ course.city }}</p>
                     <p class="mx-4">{{ course.yardage }} yards</p>
-                </div>
-                <div class="ms-2">
-
                 </div>
             </div>
 

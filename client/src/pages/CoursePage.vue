@@ -3,7 +3,7 @@
         <section class="row justify-content-center">
             <div class="col-12">
                 <div class="text-end pt-3">
-                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
+                    <button type="button" class="mdi mdi-pen btn btn-primary rounded-pill" data-bs-toggle="modal"
                         data-bs-target="#ScoreModal">
                         Add Score
                     </button>

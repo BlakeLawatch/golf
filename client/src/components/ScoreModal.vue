@@ -6,6 +6,14 @@
                     <h1 class="fs-5">Add Score</h1>
                 </div>
                 <div class="modal-body">
+                    <form @sumbit.prevent="addScore()">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                    </form>
                     ...
                 </div>
                 <div class="modal-footer">
@@ -19,6 +27,17 @@
 
 
 <script setup>
+import Pop from '@/utils/Pop';
+
+
+async function addScore() {
+    try {
+        scoreData = 
+    } catch (error) {
+        Pop.error(error)
+    }
+}
+
 </script>
 
 
