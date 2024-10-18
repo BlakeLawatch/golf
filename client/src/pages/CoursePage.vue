@@ -14,7 +14,7 @@
                 <div class="text-center pt-5">
                     <div class="d-flex" v-for="score in scores" :key="score.id">
                         <p>{{ score.creator.name }}</p>
-                        <p>{{ score.score }}</p>
+                        <p class="ms-5">{{ score.score }}</p>
 
                     </div>
                     <p>{{ activeCourse.name }}</p>

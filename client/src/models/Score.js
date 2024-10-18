@@ -3,6 +3,7 @@ export class Score {
     constructor(data){
         this.id = data.id
         this.score = data.score
+        this.courseId = data.courseId
         this.greensInRegulation = data.greensInRegulation
         this.outOfBounds = data.outOfBounds
         this.createdAt = data.createdAt

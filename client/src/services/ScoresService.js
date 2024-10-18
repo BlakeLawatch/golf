@@ -12,7 +12,9 @@ class ScoresService{
     }
 
     async addScore(scoreData){
-        const res = await api.put(`api`)
+        const res = await api.post(`api/scores`, scoreData)
+        const newScore = new Score(res.data)
+        AppState.scores.push(newScore)
     }
 }
 

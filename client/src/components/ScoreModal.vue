@@ -6,20 +6,17 @@
                     <h1 class="fs-5">Add Score</h1>
                 </div>
                 <div class="modal-body">
-                    <form @sumbit.prevent="addScore()">
+                    <form @submit.prevent="addScore()">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input v-model="editable.score" type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-
+                            <label for="score" class="form-label">Score?</label>
+                            <input v-model="editable.score" type="number" class="form-control" id="score"
+                                aria-describedby="score">
                         </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
                     </form>
-                    ...
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
+
+
             </div>
         </div>
     </div>
@@ -43,7 +40,7 @@ async function addScore() {
         scoreData.courseId = route.params.courseId
         await scoresService.addScore(scoreData)
         editable.value = {}
-        Modal.getOrCreateInstance("ScoreModal").hide()
+        Modal.getOrCreateInstance("#ScoreModal").hide()
     } catch (error) {
         Pop.error(error)
     }
