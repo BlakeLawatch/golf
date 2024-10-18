@@ -9,9 +9,9 @@
                     <form @sumbit.prevent="addScore()">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
+                            <input v-model="editable.score" type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
                         </div>
                     </form>
                     ...
@@ -27,12 +27,23 @@
 
 
 <script setup>
+import { scoresService } from '@/services/ScoresService';
 import Pop from '@/utils/Pop';
+import { Modal } from 'bootstrap';
+import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+const editable = ref({})
 
 
 async function addScore() {
     try {
-        scoreData = 
+        const scoreData = editable.value
+        scoreData.courseId = route.params.courseId
+        await scoresService.addScore(scoreData)
+        editable.value = {}
+        Modal.getOrCreateInstance("ScoreModal").hide()
     } catch (error) {
         Pop.error(error)
     }

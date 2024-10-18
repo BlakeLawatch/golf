@@ -10,6 +10,10 @@ class ScoresService{
         AppState.scores = res.data.map((pojo)=> new Score(pojo))
         logger.log('Here are the scores', res.data)
     }
+
+    async addScore(scoreData){
+        const res = await api.put(`api`)
+    }
 }
 
 
