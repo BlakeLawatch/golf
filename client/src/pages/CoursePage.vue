@@ -1,8 +1,11 @@
 <template>
     <div v-if="activeCourse" class="container-fluid">
         <section class="row justify-content-center">
-            <div class="col-12">
-                <div class="text-end pt-3">
+            <div class="col-md-10 col-6 d-flex justify-content-between p-4">
+                <div>
+                    <h1>{{ activeCourse.name }}</h1>
+                </div>
+                <div>
                     <button type="button" class="mdi mdi-pen btn btn-primary rounded-pill" data-bs-toggle="modal"
                         data-bs-target="#ScoreModal">
                         Add Score
@@ -17,7 +20,7 @@
                         <p class="ms-5">{{ score.score }}</p>
 
                     </div>
-                    <p>{{ activeCourse.name }}</p>
+
                 </div>
 
             </div>
@@ -73,4 +76,8 @@ async function getScoresbyCourseId() {
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main-style {
+    color: linear-gradient;
+}
+</style>

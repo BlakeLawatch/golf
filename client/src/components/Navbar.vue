@@ -5,20 +5,20 @@ import Login from './Login.vue';
 
 const theme = ref(loadState('theme') || 'light')
 
-onMounted(() => {
-  document.documentElement.setAttribute('data-bs-theme', theme.value)
-})
+// onMounted(() => {
+//   document.documentElement.setAttribute('data-bs-theme', theme.value)
+// })
 
-function toggleTheme() {
-  theme.value = theme.value == 'light' ? 'dark' : 'light'
-  document.documentElement.setAttribute('data-bs-theme', theme.value)
-  saveState('theme', theme.value)
-}
+// function toggleTheme() {
+//   theme.value = theme.value == 'light' ? 'dark' : 'light'
+//   document.documentElement.setAttribute('data-bs-theme', theme.value)
+//   saveState('theme', theme.value)
+// }
 
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark masters-yellow-bg px-3">
+  <nav class="navbar navbar-expand-sm navbar-dark px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img class="rounded" alt="logo" src="/img/LeeCarvallo.jpg" height="45" />

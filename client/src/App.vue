@@ -6,7 +6,7 @@ import { AppState } from './AppState.js';
 
 <template>
   <header>
-    <Navbar />
+    <!-- <Navbar /> -->
   </header>
   <main>
     <router-view />
@@ -29,13 +29,19 @@ footer {
   height: 32px;
 }
 
-.masters-yellow-bg {
-  background-color: #f4dc00;
+
+
+
+
+.master-bg {
+  background: radial-gradient(circle, #91d1d0 0%, #609ab1 35%, #011223 100%);
 }
 
-.masters-green-bg {
-  background-color: #006445;
+.master-second-bg {
+  background: linear-gradient(180deg, #91d1d0 0%, #011223 100%)
 }
+
+// background-color: #006445;
 
 .masters-yellow {
   color: #f4dc00;

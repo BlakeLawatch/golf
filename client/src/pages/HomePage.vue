@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
-    <section class="row justify-content-around masters-green-bg">
+    <section class="row justify-content-around master-bg">
+      <Navbar />
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
       <div class="d-flex col-6 py-4" v-for="course in courses" :key="course.id">
         <router-link :to="{ name: 'Course', params: { courseId: course.id } }">
@@ -25,6 +26,7 @@ import { computed, onMounted } from 'vue'
 import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
 import CoursesComponent from '../components/CoursesComponent.vue';
+import Navbar from '@/components/Navbar.vue';
 
 const courses = computed(() => AppState.courses)
 
