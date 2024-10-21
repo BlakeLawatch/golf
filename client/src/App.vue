@@ -52,7 +52,7 @@ footer {
 }
 
 .shadow-main {
-  text-shadow: 1px 1px 5px #f7f7f7;
+  text-shadow: 1px 1px 5px #011223d3;
 }
 
 .relative {

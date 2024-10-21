@@ -1,7 +1,7 @@
 <template>
     <section class="row justify-content-center">
-        <div class="col-11 d-flex justify-content-around p-2">
-            <div class="bg-img course-card text-center">
+        <div class="col-11 d-flex course-card justify-content-around p-2">
+            <div class="bg-img  text-center">
                 <p class="font">{{ course.name }} </p>
             </div>
             <div>
@@ -54,8 +54,13 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
 }
 
 .course-card {
-    border: .1rem solid #f4dc00;
-    border-radius: 4px;
+    // border-width: .2rem;
+    border-radius: 10px;
+    // border-style: solid;
+    border: .2rem solid;
+    border-image: linear-gradient(to right, #91d1d0, #609ab1, #011223) border-box;
+    width: 90%;
+    box-shadow: inset 0px 0px 10px yellow;
 }
 
 .details {
