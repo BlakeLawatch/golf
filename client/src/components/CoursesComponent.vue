@@ -1,18 +1,18 @@
 <template>
-    <section class="row justify-content-center">
-        <div class="col-11 d-flex course-card justify-content-around p-2">
-            <div class="bg-img  text-center">
-                <p class="font">{{ course.name }} </p>
-            </div>
-            <div>
-                <div class="d-flex mx-5 details">
-                    <p class="mx-4">{{ course.city }}</p>
-                    <p class="mx-4">{{ course.yardage }} yards</p>
-                </div>
-            </div>
-
+    <!-- <section class="row justify-content-center"> -->
+    <div class="d-flex course-card justify-content-around p-2">
+        <div class="bg-img text-center">
+            <p class="font">{{ course.name }} </p>
         </div>
-    </section>
+        <div>
+            <div class="mx-5 details">
+                <p>{{ course.city }}</p>
+                <p>{{ course.yardage }} yards</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- </section> -->
 </template>
 
 

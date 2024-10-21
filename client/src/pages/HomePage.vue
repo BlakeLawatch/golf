@@ -3,7 +3,7 @@
     <section class="row justify-content-around master-bg">
       <Navbar />
       <h1 class="masters-yellow shadow-main text-center">SELECT YOUR COURSE</h1>
-      <div class="d-flex col-6 py-4" v-for="course in courses" :key="course.id">
+      <div class="d-flex justify-content-center col-6 py-4" v-for="course in courses" :key="course.id">
         <router-link :to="{ name: 'Course', params: { courseId: course.id } }">
           <CoursesComponent :course="course" />
 
