@@ -1,13 +1,14 @@
 <template>
     <div v-if="activeCourse" class="container-fluid">
+        <Navbar />
         <section class="row justify-content-center">
             <div class="col-md-10 col-6 d-flex justify-content-between p-4">
                 <div>
                     <h1>{{ activeCourse.name }}</h1>
                 </div>
                 <div>
-                    <button type="button" class="mdi mdi-pen btn btn-primary rounded-pill" data-bs-toggle="modal"
-                        data-bs-target="#ScoreModal">
+                    <button v-if="account" type="button" class="mdi mdi-pen btn btn-primary rounded-pill"
+                        data-bs-toggle="modal" data-bs-target="#ScoreModal">
                         Add Score
                     </button>
                 </div>
@@ -39,11 +40,13 @@ import Pop from '@/utils/Pop';
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import ScoreModal from '../components/ScoreModal.vue'
+import Navbar from '@/components/Navbar.vue';
 
 
 const scores = computed(() => AppState.scores)
 const activeCourse = computed(() => AppState.activeCourse)
 const route = useRoute()
+const account = computed(() => AppState.account)
 
 onMounted(() => {
     { getCoursebyId() }

@@ -60,7 +60,7 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
     border: .2rem solid;
     border-image: linear-gradient(to right, #91d1d0, #609ab1, #011223) border-box;
     width: 90%;
-    box-shadow: inset 0px 0px 10px yellow;
+    box-shadow: inset 0px 0px 10px #011223;
 }
 
 .details {
