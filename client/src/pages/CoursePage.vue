@@ -1,16 +1,16 @@
 <template>
-    <div v-if="activeCourse" class="container-fluid">
+    <div v-if="activeCourse" class="container-fluid secondary-bg">
         <Navbar />
         <section class="row justify-content-center">
             <div class="col-md-10 col-6 d-flex justify-content-between p-4">
-                <div>
-                    <h1>{{ activeCourse.name }}</h1>
-                </div>
                 <div>
                     <button v-if="account" type="button" class="mdi mdi-pen btn btn-primary rounded-pill"
                         data-bs-toggle="modal" data-bs-target="#ScoreModal">
                         Add Score
                     </button>
+                </div>
+                <div>
+                    <h1 class="text-light permanent-marker">{{ activeCourse.name }}</h1>
                 </div>
 
             </div>

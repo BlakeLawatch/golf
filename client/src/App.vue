@@ -18,10 +18,12 @@ import { AppState } from './AppState.js';
 
 <style lang="scss">
 @import '@/assets/scss/main.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Permanent+Marker&display=swap');
 
 :root {
   --main-height: calc(100vh - 32px - 64px);
 }
+
 
 footer {
   display: grid;
@@ -30,15 +32,17 @@ footer {
 }
 
 
-
-
-
 .master-bg {
   background: radial-gradient(circle, #91d1d0 0%, #609ab1 35%, #011223 100%);
 }
 
 .master-second-bg {
   background: linear-gradient(180deg, #91d1d0 0%, #011223 100%)
+}
+
+.secondary-bg {
+  background: radial-gradient(circle, #91d1d0 0%, #609ab1 35%, #011223dc 100%);
+
 }
 
 // background-color: #006445;
@@ -54,6 +58,13 @@ footer {
 .shadow-main {
   text-shadow: 1px 1px 5px #011223d3;
 }
+
+.permanent-marker {
+  font-family: "Permanent Marker", cursive;
+  font-style: oblique;
+  text-decoration: underline;
+}
+
 
 .relative {
   position: relative;
