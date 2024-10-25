@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 
 export const ScoreSchema = new Schema({
 
-    score: { type: String, required: true },
+    score: { type: Number, required: true },
     courseId: { type: Schema.Types.ObjectId, required: true },
     creatorId: { type: Schema.Types.ObjectId, required: true },
     greensInRegulation: { type: String, required: false },

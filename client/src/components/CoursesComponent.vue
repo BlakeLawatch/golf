@@ -44,6 +44,7 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
     background-size: cover;
     height: 20dvh;
     width: 25dvw;
+    border-radius: 10px 2px 2px 10px;
 }
 
 .font {
@@ -54,13 +55,17 @@ const backImg = computed(() => `url(${props.course?.coverImg})`)
 }
 
 .course-card {
-    // border-width: .2rem;
     border-radius: 10px;
-    // border-style: solid;
     border: .2rem solid;
     border-image: linear-gradient(to right, #91d1d0, #609ab1, #011223) border-box;
     width: 90%;
     box-shadow: inset 0px 0px 10px #011223;
+}
+
+.course-card:hover {
+    transform: scale(1.02);
+    transition: ease .5s;
+    box-shadow: inset 0px 0px 5px #011223;
 }
 
 .details {

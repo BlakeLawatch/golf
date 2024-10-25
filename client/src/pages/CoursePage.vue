@@ -68,6 +68,7 @@ async function getScoresbyCourseId() {
     try {
         const courseId = route.params.courseId
         await scoresService.getScoresbyCourseId(courseId)
+
     } catch (error) {
         Pop.error(error)
     }

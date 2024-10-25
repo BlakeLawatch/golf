@@ -47,7 +47,6 @@ export class CourseController extends BaseController {
     async createCourse(req, res, next) {
         try {
             const courseData = req.body
-            // debugger
             courseData.creatorId = req.userInfo.id
             const newCourse = await courseService.createCourse(courseData)
             return res.send(newCourse)

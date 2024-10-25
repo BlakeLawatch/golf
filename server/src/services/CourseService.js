@@ -9,6 +9,7 @@ class CourseService {
     }
     async getCourses(courseId) {
         const courses = await dbContext.Courses.find(courseId).populate('creator')
+
         return courses
     }
     async getCoursebyId(courseId) {
