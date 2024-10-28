@@ -2,7 +2,7 @@
     <div v-if="activeCourse" class="container-fluid secondary-bg">
         <Navbar />
         <section class="row justify-content-center">
-            <div class="col-md-10 col-6 d-flex justify-content-between p-4">
+            <div class="col-md-12 col-6 d-flex justify-content-around p-4">
                 <div>
                     <button v-if="account" type="button" class="mdi mdi-pen btn btn-primary rounded-pill"
                         data-bs-toggle="modal" data-bs-target="#ScoreModal">
@@ -14,6 +14,13 @@
                 </div>
 
             </div>
+
+            <div class="col-md-2 col-6 text-center" v-for="filter in filters" :key="filter">
+                <button>{{ filter }}</button>
+            </div>
+            <div class="col-md-6"></div>
+
+
             <div class="col-6">
                 <div class="text-center pt-5">
                     <div class="d-flex" v-for="score in scores" :key="score.id">
@@ -47,6 +54,7 @@ const scores = computed(() => AppState.scores)
 const activeCourse = computed(() => AppState.activeCourse)
 const route = useRoute()
 const account = computed(() => AppState.account)
+const filters = ["Your Scores", "Your Group", "All Scores"]
 
 onMounted(() => {
     { getCoursebyId() }
