@@ -16,7 +16,7 @@ GroupSchema.virtual('profile', {
 
 GroupSchema.virtual('course', {
     localField: 'groupId',
-    foreignField: '_id',
+    foreignField: 'courseId',
     ref: 'Course',
     justOne: false
 })
