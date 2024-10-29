@@ -5,6 +5,7 @@ export const ScoreSchema = new Schema({
     score: { type: Number, required: true },
     courseId: { type: Schema.Types.ObjectId, required: true },
     creatorId: { type: Schema.Types.ObjectId, required: true },
+    groupId: { type: Schema.Types.ObjectId, required: false },
     greensInRegulation: { type: String, required: false },
     puttsPerRound: { type: String, required: false },
     outOfBounds: { type: String, required: false }
