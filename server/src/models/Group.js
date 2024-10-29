@@ -1,9 +1,9 @@
-import { type } from "jquery";
 import { Schema } from "mongoose";
 
 export const GroupSchema = new Schema({
     accountId: { type: Schema.Types.ObjectId, required: true },
-    groupId: { type: Schema.Types.ObjectId, required: false }
+    groupId: { type: Schema.Types.ObjectId, required: false },
+    name: { type: String, required: true, maxLength: 30 }
 },
     { timestamps: true, toJSON: { virtuals: true } })
 
