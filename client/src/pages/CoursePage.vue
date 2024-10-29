@@ -16,7 +16,7 @@
             </div>
 
             <div class="col-md-2 col-6 text-center" v-for="filter in filters" :key="filter">
-                <button>{{ filter }}</button>
+                <button @click="changeFilterType(filter)">{{ filter }}</button>
             </div>
             <div class="col-md-6"></div>
 
@@ -81,6 +81,15 @@ async function getScoresbyCourseId() {
         Pop.error(error)
     }
 }
+
+// async function changeFilterType(filter) {
+//     try {
+//         await scoresService.changeFilterType(filter)
+//         return
+//     } catch (error) {
+//         Pop.error(error)
+//     }
+// }
 
 
 

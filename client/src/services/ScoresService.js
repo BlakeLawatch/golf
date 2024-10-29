@@ -27,6 +27,10 @@ class ScoresService{
         const newScore = new Score(res.data)
         AppState.scores.push(newScore)
     }
+
+    // async changeFilterType(filter){
+    //     if(filter == "Your Scores")
+    // }
 }
 
 
