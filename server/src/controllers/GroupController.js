@@ -7,15 +7,26 @@ export class GroupController extends BaseController {
         super('api/groups')
         this.router
             .get('', this.getGroups)
+            .get('/:groupId', this.getGroupbyId)
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('', this.createGroup)
-            .delete(':/groupId', this.removeGroup)
+            .delete('/:groupId', this.removeGroup)
     }
 
     async getGroups(req, res, next) {
         try {
             const groups = await groupService.getGroups()
             return res.send(groups)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    async getGroupbyId(req, res, next) {
+        try {
+            const groupId = req.params.groupId
+            const group = await groupService.getGroupbyId(groupId)
+            return res.send(group)
         } catch (error) {
             next(error)
         }

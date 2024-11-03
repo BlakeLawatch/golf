@@ -6,6 +6,10 @@ class GroupService {
         const groups = await dbContext.Groups.find().populate('creator')
         return groups
     }
+    async getGroupbyId(groupId) {
+        const group = (await dbContext.Groups.findById(groupId)).populate('creator')
+        return group
+    }
     async createGroup(groupData) {
         const newGroup = (await dbContext.Groups.create(groupData)).populate('creator')
         return newGroup
