@@ -2,8 +2,8 @@ import { Schema } from "mongoose";
 
 export const GroupSchema = new Schema({
     creatorId: { type: Schema.Types.ObjectId, required: true },
-    // groupId: { type: Schema.Types.ObjectId, required: true },
-    name: { type: String, required: true, maxLength: 30 }
+    name: { type: String, required: true, maxLength: 30 },
+    capacity: { type: Number, required: false, maxLength: 50 }
 },
     { timestamps: true, toJSON: { virtuals: true } })
 
