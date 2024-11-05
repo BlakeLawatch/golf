@@ -1,4 +1,5 @@
 import { dbContext } from "../db/DbContext"
+import { Forbidden } from "../utils/Errors"
 
 class GroupService {
 
@@ -15,8 +16,11 @@ class GroupService {
         return newGroup
     }
     async removeGroup(groupId, userId) {
-        const message = await dbContext.Groups.findByIdAndDelete({ groupId })
-        // if(userId != )
+        const group = await this.getGroupbyId(groupId)
+        if (group.creatorId.toString() != userId) {
+            throw new Forbidden("Not yours to delete")
+        }
+        return "Group Deleted"
     }
 }
 
