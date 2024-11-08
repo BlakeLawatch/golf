@@ -14,6 +14,7 @@ GroupSchema.virtual('creator', {
     justOne: true
 })
 
+
 // GroupSchema.virtual('course', {
 //     localField: 'groupId',
 //     foreignField: 'courseId',
