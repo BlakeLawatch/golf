@@ -14,5 +14,6 @@ export const AppState = reactive({
   activeCourse: null,
   /** @type {import('./models/Group.js').Group[]} user info from the database*/
   groups: []
+
 })
 

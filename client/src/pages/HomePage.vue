@@ -27,7 +27,8 @@ import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
 import CoursesComponent from '../components/CoursesComponent.vue';
 import Navbar from '@/components/Navbar.vue';
-import { groupService } from '@/services/GroupService';
+import { groupsService } from '@/services/GroupService.js';
+
 
 const courses = computed(() => AppState.courses)
 
@@ -45,7 +46,7 @@ async function getCourses() {
 }
 async function getGroups() {
   try {
-    await groupService.getGroups()
+    await groupsService.getGroups()
   }
   catch (error) {
     Pop.error(error);
