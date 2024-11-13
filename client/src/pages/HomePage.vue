@@ -27,11 +27,13 @@ import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
 import CoursesComponent from '../components/CoursesComponent.vue';
 import Navbar from '@/components/Navbar.vue';
+import { groupService } from '@/services/GroupService';
 
 const courses = computed(() => AppState.courses)
 
 onMounted(() => {
   { getCourses() }
+  { getGroups() }
 })
 
 async function getCourses() {
@@ -40,7 +42,14 @@ async function getCourses() {
   } catch (error) {
     Pop.error(error)
   }
-
+}
+async function getGroups() {
+  try {
+    await groupService.getGroups()
+  }
+  catch (error) {
+    Pop.error(error);
+  }
 }
 
 
