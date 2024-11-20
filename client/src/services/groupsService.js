@@ -6,7 +6,7 @@ import { logger } from "@/utils/Logger"
 class GroupsService{
 
     async getGroups(){
-        const res = await api.get('api/groups')
+        const res = await api.get(`api/groups`)
         AppState.groups = res.data.map((pojo) => new Group(pojo))
         logger.log(res.data, 'got groups')
     }

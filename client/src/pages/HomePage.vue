@@ -27,7 +27,7 @@ import { coursesService } from '../services/coursesService.js'
 import { AppState } from '../AppState'
 import CoursesComponent from '../components/CoursesComponent.vue';
 import Navbar from '@/components/Navbar.vue';
-import { groupsService } from '@/services/GroupService.js';
+import { groupsService } from '@/services/groupsService.js';
 
 
 const courses = computed(() => AppState.courses)
