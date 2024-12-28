@@ -26,6 +26,7 @@
                     <div class="d-flex" v-for="score in scores" :key="score.id">
                         <p>{{ score.creator.name }}</p>
                         <p class="ms-5">{{ score.score }}</p>
+                        <p>Winner here</p>
 
                     </div>
 
