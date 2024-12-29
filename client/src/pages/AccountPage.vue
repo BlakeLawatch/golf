@@ -19,10 +19,23 @@
 import { computed } from 'vue';
 import { AppState } from '../AppState.js';
 import GroupModal from '@/components/GroupModal.vue';
+import { scoresService } from '@/services/ScoresService.js';
+import Pop from '@/utils/Pop.js';
 
 const account = computed(() => AppState.account)
 
 async function createGroup() {
+
+}
+
+async function getScoresbyAccountId() {
+  try {
+    const accountId = account.id
+    await scoresService.getScoresbyAccountId(accountId)
+
+  } catch (error) {
+    Pop.error(error)
+  }
 
 }
 </script>

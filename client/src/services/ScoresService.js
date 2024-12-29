@@ -31,7 +31,13 @@ class ScoresService{
     // async changeFilterType(filter){
     //     if(filter == "Your Scores")
     // }
+    async getScoresbyAccountId(){
+        const res = await api.get('api/scores')
+        AppState.scores = res.data.map((pojo)=> new Score (pojo))
+        logger.log ('scores')
+    }
 }
+
 
 
 export const scoresService = new ScoresService()
