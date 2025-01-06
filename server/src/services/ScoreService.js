@@ -33,6 +33,10 @@ class ScoreService {
         }
         return deletedScore
     }
+    async getMyScores(userId) {
+        const myScores = await dbContext.Scores.find({ accountId: userId }).populate('score')
+        return myScores
+    }
 }
 
 
